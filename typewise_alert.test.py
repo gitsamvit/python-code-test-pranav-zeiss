@@ -1,5 +1,7 @@
 import unittest
 import typewise_alert
+import sys
+import io
 
 
 class TypewiseTest(unittest.TestCase):
@@ -15,6 +17,9 @@ class TypewiseTest(unittest.TestCase):
       self.assertTrue(typewise_alert.classify_temperature_breach(cooling_types[i], -20) == 'TOO_LOW')
       self.assertTrue(typewise_alert.classify_temperature_breach(cooling_types[i], upper_limits[i]+20) == 'TOO_HIGH')
       self.assertTrue(typewise_alert.classify_temperature_breach(cooling_types[i], 20) == 'NORMAL')
+
+
+
 
   
 

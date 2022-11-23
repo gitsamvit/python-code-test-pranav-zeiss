@@ -2,9 +2,10 @@
 def infer_breach(value, lowerLimit, upperLimit):
   if value < lowerLimit:
     return 'TOO_LOW'
-  if value > upperLimit:
+  elif value > upperLimit:
     return 'TOO_HIGH'
-  return 'NORMAL'
+  else:
+    return 'NORMAL'
 
 
 def classify_temperature_breach(coolingType, temperatureInC):
@@ -32,6 +33,7 @@ def check_and_alert(alertTarget, batteryChar, temperatureInC):
 
 
 def send_to_controller(breachType):
+  print("in send_to_control")
   header = 0xfeed
   print(f'{header}, {breachType}')
 
